@@ -10,5 +10,23 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	print_array(array, size);
+        size_t currentInd, times = 0;
+
+	if (size < 2)
+                return;
+
+        while (times < (size - 1))
+        {
+                for (currentInd = 0; currentInd < (size - 1); currentInd++)                {
+                        if (array[currentInd] > array[currentInd + 1])
+                        {
+                                size_t temp = array[currentInd];
+
+                                array[currentInd] = array[currentInd + 1];
+                                array[currentInd + 1] = temp;
+                                print_array(array, size);
+                        }
+                }
+                times++;
+        }
 }
